@@ -1,0 +1,512 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* colores */
+
+  --color-principal: #5D1FF2;
+
+  /* medidas */
+
+  --dado-tamaño-normal: 150px;
+  --espacio: 50px;
+}
+
+body {
+  background-color: black;
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* HEADERS */
+
+.portada-inicial {
+  height: 100vh;
+}
+
+/* Navbar */
+
+.portada-inicial .navbar {
+  display: flex;
+}
+
+.portada-inicial .navbar div {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100px;
+
+  display: grid;
+  place-content: center;
+}
+
+.portada-inicial .navbar div a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.portada-inicial .navbar div .active {
+  color: var(--color-principal);
+  position: relative;
+}
+
+.portada-inicial .navbar div .active::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-principal);
+
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.portada-inicial .navbar div a:not(.active) {
+  position: relative;
+  transition: 1s;
+}
+
+.portada-inicial .navbar div a:not(.active):hover {
+  color: var(--color-principal);
+  transition: 1s;
+}
+
+.portada-inicial .navbar div a:not(.active)::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--color-principal);
+
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+
+  transition: 1s;
+}
+
+.portada-inicial .navbar div a:not(.active):hover::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-principal);
+
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+
+  transition: 1s;
+}
+
+/* Introduccion */
+
+.portada-inicial .introduccion {
+  width: 100%;
+  height: calc(100% - 100px);
+  background-image: url(img/fondo-oscuro.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+}
+
+.portada-inicial .introduccion div {
+  width: 50%;
+  height: 100%;
+}
+
+.portada-inicial .introduccion .titulo-introduccion {
+  display: grid;
+  place-content: center;
+}
+
+.portada-inicial .introduccion .titulo-introduccion span {
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+.portada-inicial .introduccion .titulo-introduccion span:nth-child(1) {
+  font-size: 60px;
+  transform: translateX(-50px);
+}
+
+.portada-inicial .introduccion .titulo-introduccion span:nth-child(2) {
+  font-size: 90px;
+  color: var(--color-principal);
+}
+
+.portada-inicial .introduccion .animacion-introduccion {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portada-inicial .introduccion .animacion-introduccion > div {
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% / 3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portada-inicial .introduccion .caja {
+  width: 0;
+  height: 0;
+
+  position: relative;
+  transform-style: preserve-3d;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portada-inicial .introduccion .caja-1 {
+  animation-name: rotate;
+  animation-duration: 30s;
+}
+
+.portada-inicial .introduccion .caja-2 {
+  animation-name: rotate2;
+  animation-duration: 15s;
+}
+
+.portada-inicial .introduccion .caja-3 {
+  animation-name: rotate;
+  animation-duration: 10s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0,0,0,0);
+  }
+
+  100% {
+    transform: rotate3d(0,1,0,360deg);
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotate3d(0,1,0,360deg);
+  }
+
+  100% {
+    transform: rotate3d(0,0,0,0);
+  }
+}
+
+.portada-inicial .introduccion .caja .caras {
+  width: var(--dado-tamaño-normal);
+  height: var(--dado-tamaño-normal);
+  box-sizing: border-box;
+  background-color: purple;
+  border: 2px solid white;
+  position: absolute;
+}
+
+.portada-inicial .introduccion .caja .uno {
+  transform: translateZ(calc((var(--dado-tamaño-normal) / 2) + var(--espacio)));
+}
+
+.portada-inicial .introduccion .caja .dos {
+  transform: translateZ(calc(var(--dado-tamaño-normal) / 2)) translateX(calc((var(--dado-tamaño-normal) / 2) + var(--espacio))) translateZ(calc(var(--dado-tamaño-normal) / -2)) rotateY(90deg);
+}
+
+.portada-inicial .introduccion .caja .tres {
+  transform: translateZ(calc(var(--dado-tamaño-normal) / 2)) translateX(calc((var(--dado-tamaño-normal) / -2) - var(--espacio))) translateZ(calc(var(--dado-tamaño-normal) / -2)) rotateY(90deg);
+}
+
+.portada-inicial .introduccion .caja .cuatro {
+  transform: translateZ(calc((var(--dado-tamaño-normal) * -.5) - var(--espacio)));
+}
+
+.caras img {
+  width: 100%;
+  height: 100%;
+}
+
+/* CONTAINER SECTION PRINCIPAL */
+
+/* Caja Formularios */
+
+.container-section-principal {
+  border-bottom: 2px solid white;
+}
+
+.container-section-principal .caja-formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 35px 0;
+}
+
+.container-section-principal .caja-formulario .difuminado {
+  height: 300px;
+  width: 500px;
+  background-color: gray;
+
+  display: flex;
+}
+
+.container-section-principal .caja-formulario .difuminado > div {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* titulo de la imagen */
+
+.container-section-principal .caja-formulario .difuminado .parte-1 .cajita-titulo-imagen {
+  position: relative;
+  width: 70%;
+}
+
+.container-section-principal .caja-formulario .difuminado .parte-1 .cajita-titulo-imagen .titulo-imagen {
+  box-sizing: border-box;
+  width: 100%;
+  background: none;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.container-section-principal .caja-formulario .difuminado .parte-1 .cajita-titulo-imagen label {
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform .5s, color .3s;
+}
+
+.container-section-principal .caja-formulario .difuminado .parte-1 .cajita-titulo-imagen .titulo-imagen:focus + label, 
+.container-section-principal .caja-formulario .difuminado .parte-1 .cajita-titulo-imagen .titulo-imagen:not(:placeholder-shown) + label {
+  transform: translateY(-12px) scale(.8);
+  left: 5px;
+  transform-origin: top left;
+  color: var(--color-principal);
+
+  transition: transform .5s, color .3s;
+}
+
+/* fecha de la imagen */
+
+.container-section-principal .caja-formulario .difuminado .parte-1 .fecha {
+  font-size: 20px;
+  padding: 15px;
+  background: none;
+  border: none;
+}
+
+.container-section-principal .caja-formulario .difuminado .parte-1 .fecha:focus {
+  color: var(--color-principal);
+}
+
+/* seleccionar la imagen */
+
+.container-section-principal .caja-formulario .difuminado .parte-2 .cajita-seleccionar-imagen {
+  width: 120px;
+  height: 90px;
+  border: 3px dashed black;
+
+  display: grid;
+  place-content: center;
+
+  cursor: pointer;
+}
+
+.container-section-principal .caja-formulario .difuminado .parte-2  .cajita-seleccionar-imagen .fa-image {
+  font-size: 25px;
+}
+
+.container-section-principal .caja-formulario .difuminado .parte-2 .cajita-seleccionar-imagen .imagen {
+  display: none;
+}
+
+/* boton seleccionar imagen */
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+  background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  z-index: 5;
+  padding: 10px;
+  }
+
+button::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(100% + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+button::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 60px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 140px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+
+/* CONTAINER SECTION SECUNDARIO */
+
+.container-section-secundaria {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* caja fotos galeria */
+
+.caja-fotos-galeria {
+  width: 300px;
+  height: 250px;
+
+  border-radius: 10px;
+  border: 2px solid white;
+  z-index: 2;
+
+  position: relative;
+}
+
+.caja-fotos-galeria > div {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+
+  position: absolute;
+  bottom: 50px;
+}
+
+.caja-fotos-galeria .cajita-informacion-galeria .titulo-informacion-galeria {
+  display: inline-block;
+  font-family: 'Merriweather', serif;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.caja-fotos-galeria .cajita-imagen-galeria {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+  transition: 3s;
+}
+
+
+.caja-fotos-galeria .cajita-imagen-galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+
+  transition: .3s;
+}
+
+.efecto {
+  filter: grayscale(100%);
+}
+
+.caja-fotos-galeria .cajita-icon-eliminar {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+
+.caja-fotos-galeria .cajita-icon-eliminar .icon-eliminar {
+  color: red;
+  font-size: 25px;
+
+  transition: .3s;
+}
+
+.desaparecer {
+  display: none !important;
+  transition: .3s;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/logo.png">
+
+  <!-- Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&family=Fredoka&family=Lobster&family=Montserrat:ital,wght@0,600;1,400&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Playfair+Display:ital@1&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+
+  <!-- Cdn -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <title>Galería de Fotos || Javi Programeitor</title>
+</head>
+<body>
+  <header class="portada-inicial">
+    <nav class="navbar">
+      <div class="cajita-principal">
+        <a class="active" href="">Crear</a>
+      </div>
+      <div class="cajita-secundaria">
+        <a href="./visualizar/index.html">Ver todo</a>
+      </div>
+    </nav>
+    <div class="introduccion">
+      <div class="titulo-introduccion">
+        <span>PHOTO</span>
+        <span>GALLERY</span>
+      </div>
+      <div class="animacion-introduccion">
+        <div class="anima-1">
+          <div class="caja caja-1">
+            <div class="caras uno">
+              <img src="img/img-carrusel/1/imagen-1.jpg" alt="">
+            </div>
+            <div class="caras dos">
+              <img src="img/img-carrusel/1/imagen-2.jpg" alt="">
+            </div>
+            <div class="caras tres">
+              <img src="img/img-carrusel/1/imagen-3.jpg" alt="">
+            </div>
+            <div class="caras cuatro">
+              <img src="img/img-carrusel/1/imagen-4.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="anima-2">
+
+          <div class="caja caja-2">
+            <div class="caras uno">
+              <img src="img/img-carrusel/2/imagen-1.jpg" alt="">
+            </div>
+            <div class="caras dos">
+              <img src="img/img-carrusel/2/imagen-2.jpg" alt="">
+            </div>
+            <div class="caras tres">
+              <img src="img/img-carrusel/2/imagen-3.jpg" alt="">
+            </div>
+            <div class="caras cuatro">
+              <img src="img/img-carrusel/2/imagen-4.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="anima-3">
+          <div class="caja caja-3">
+            <div class="caras uno">
+              <img src="img/img-carrusel/3/imagen-1.jpg" alt="">
+            </div>
+            <div class="caras dos">
+              <img src="img/img-carrusel/3/imagen-2.jpg" alt="">
+            </div>
+            <div class="caras tres">
+              <img src="img/img-carrusel/3/imagen-3.jpg" alt="">
+            </div>
+            <div class="caras cuatro">
+              <img src="img/img-carrusel/3/imagen-4.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="container-section-principal">
+    <article class="caja-formulario">
+      <div class="difuminado">
+        <div class="parte-1">
+          <div class="cajita-titulo-imagen">
+            <input type="text" name="titulo" id="titulo-imagen" class="titulo-imagen" placeholder=" " required>
+            <label for="titulo-imagen">Título Imagen</label>
+          </div>
+          <input type="date" name="" id="" class="fecha" required>
+        </div>
+        <div class="parte-2">
+          <div class="cajita-seleccionar-imagen">
+            <input class="imagen" type="file" name="images[]">
+            <i class="fa-regular fa-image"></i>
+          </div>
+          <div class="wrap boton-imagen">
+            <button class="button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <section class="container-section-secundaria">
+    
+  </section>
+
+  <!-- Templates -->
+
+  <template id="template-fotos-galeria">
+    <div class="caja-fotos-galeria">
+      <figure class="cajita-imagen-galeria">
+        <img class="imagen-galeria" src="">
+      </figure>
+      <div class="desaparecer cajita-informacion-galeria">
+        <span class="titulo-informacion-galeria"></span>
+      </div>
+      <figure class="desaparecer cajita-icon-eliminar">
+        <i class="icon-eliminar fa-solid fa-x"></i>
+      </figure>
+    </div>
+  </template>
+
+  <script src="main.js"></script>
+</body>
+</html>
